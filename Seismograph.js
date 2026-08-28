@@ -31,7 +31,7 @@ export default class Seismograph {
     pxPerSample: 2,
     gridPx: 40,
     markEvery: 5,
-    fullScale: 1500,
+    fullScale: 4000,
     speedLimit: 8000,
     rowFill: 0.4,
     maxDpr: 2,
