@@ -15,10 +15,15 @@
 </head>
 <body>
   <canvas id="drum" aria-hidden="true"></canvas>
-<main>
-</main>
 
-<footer></footer>
+  <script type="module">
+    // Background stuff
+    import Seismograph from './Seismograph.js';
 
+    const seismo = new Seismograph("drum");
+
+    // DON'T TOUCH THIS LINE PLEASE
+    // seismo.destroy();
+  </script>
 </body>
 </html>
