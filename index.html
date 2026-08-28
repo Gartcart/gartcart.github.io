@@ -11,19 +11,43 @@
       mask-image: linear-gradient(90deg, transparent, #000 140px);
       -webkit-mask-image: linear-gradient(90deg, transparent, #000 140px);
     }
+
+    #drum { opacity: 0.45; }
+
+    .label {
+      position: fixed;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      margin: 0;
+      text-align: center;
+      color: #f4f4f0;
+      text-shadow: 0 0 14px #000, 0 0 28px #000, 0 0 48px #000;
+    }
+
+    .name {
+      top: calc(100% / 3);
+      font: 500 clamp(2.5rem, 9vw, 7rem)/1 system-ui, sans-serif;
+      letter-spacing: -0.03em;
+    }
+
+    .role {
+      top: calc(200% / 3);
+      font: 400 clamp(0.75rem, 1.6vw, 1rem)/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      text-indent: 0.42em;
+    }
   </style>
 </head>
 <body>
   <canvas id="drum" aria-hidden="true"></canvas>
-
+  <h1 class="label name">Garrett Scott</h1>
+  <p class="label role">Software Engineer</p>
   <script type="module">
     // Background stuff
     import Seismograph from './Seismograph.js';
-
     const seismo = new Seismograph("drum");
-
-    // DON'T TOUCH THIS LINE PLEASE
-    // seismo.destroy();
-  </script>
+</script>
 </body>
 </html>
