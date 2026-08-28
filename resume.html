@@ -1,0 +1,121 @@
+<!-- AI tools were used to generate this file -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Garrett Scott — Resume</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="resume.css">
+  <script type="module" src="scripts/nav.js"></script>
+  <script type="module" src="scripts/boot.js"></script>
+</head>
+<body>
+  <nav aria-label="Main navigation">
+    <a href="./" data-frame="sine"><span>Home</span></a>
+    <a href="resume.html" data-frame="zigzag" aria-current="page"><span>Resume</span></a>
+    <a href="analytics.html" data-frame="scallop"><span>Analytics</span></a>
+  </nav>
+  <div class="terminal" id="terminal" aria-hidden="true"></div>
+  <button class="skip-btn" id="skip-btn" type="button" aria-label="Skip terminal animation">Skip Animation</button>
+  <article class="resume-sheet">
+    <header class="resume-header">
+      <h1>Garrett S.</h1>
+      <address class="contact-info">
+        <a href="mailto:engineeringforwarding@gmail.com">engineeringforwarding@gmail.com</a> &nbsp;|&nbsp;
+        <a href="https://github.com/Gartcart">github.com/Gartcart</a>
+      </address>
+      <p class="resume-note">
+        Public version, abridged. Employer-restricted details and embargoed thesis
+        results are withheld. Full resume available on request.
+      </p>
+    </header>
+    <section class="resume-section">
+      <h2>Education</h2>
+      <article class="education">
+        <h3>Auburn University, Samuel Ginn College of Engineering — Auburn, AL</h3>
+        <p class="meta">Master of Software Engineering &middot; GPA 3.75 &middot; August 2026</p>
+      </article>
+      <article class="education">
+        <h3>Auburn University, Samuel Ginn College of Engineering — Auburn, AL</h3>
+        <p class="meta">Bachelor of Software Engineering, Machine Learning Focus &middot; December 2024</p>
+      </article>
+    </section>
+    <section class="resume-section">
+      <h2>Experience</h2>
+      <article class="job">
+        <h3>Graduate Research Assistant — Auburn University</h3>
+        <p class="meta">May 2025 – August 2026 &middot; Auburn, AL</p>
+        <ul>
+          <li>Built and fine-tuned a YOLO-based computer vision pipeline processing 500+ hours of streaming interstate traffic camera footage for vehicle detection, speed estimation, and seat belt classification, exceeding 0.90 mAP@0.5 on vehicle detection.</li>
+          <li>Engineered end-to-end video and image processing workflows in Python (OpenCV, PyTorch, TensorFlow) covering frame extraction, dataset curation, and annotation tooling, reducing dataset preparation time by 28%.</li>
+          <li>Designed evaluation frameworks benchmarking 8 model configurations across precision, recall, and inference speed to select production candidates for state transportation smart-corridor deliverables.</li>
+          <li>Presented model performance, latency tradeoffs, and deployment recommendations to faculty and external agency stakeholders across a 15-month engagement.</li>
+          <li>Containerized training and inference environments with Docker and ran multi-GPU model sweeps on CUDA-enabled hardware, standardizing reproducible runs.</li>
+        </ul>
+      </article>
+      <article class="job">
+        <h3>Software Developer Intern — Defense Industry Contractor</h3>
+        <p class="meta">May 2022 – August 2022 &middot; Huntsville, AL</p>
+        <ul>
+          <li>Led a team of 3 interns building Python tooling for serial communication with restricted-access hardware systems, delivering an autonomous test harness still in use as of 2026.</li>
+          <li>Developed and tested C++, Java, and Python programs supporting an internal software framework used by 20 engineers.</li>
+          <li>Designed GUIs and automation scripts for internal tooling and modernized local file-sharing across company networks, cutting manual test steps by 95%.</li>
+        </ul>
+      </article>
+    </section>
+    <section class="resume-section">
+      <h2>Projects</h2>
+      <article class="project">
+        <h3>Hybrid Imitation and Reinforcement Learning Driving Agent (MS Thesis)</h3>
+        <p class="meta">Details withheld pending publication</p>
+        <ul>
+          <li>Built an end-to-end autonomous driving perception and control pipeline pairing behavioral cloning with a residual reinforcement learning agent, trained on human demonstration laps.</li>
+          <li>Authored custom track geometries in Unreal Engine 5 with the Learning Agents plugin, using simulation and synthetic data generation to train and validate policies at scale.</li>
+          <li>Designed an automated evaluation harness and quantified results with Firth-penalized logistic regression, Fisher exact tests, and Wilson confidence intervals.</li>
+          <li>Full methodology and results available on request once the publication embargo lifts.</li>
+        </ul>
+      </article>
+      <article class="project">
+        <h3>ML Benchmarking Pipeline (Wine Quality)</h3>
+        <p class="meta"><a href="https://github.com/Gartcart/Wine-Quality">github.com/Gartcart/Wine-Quality</a></p>
+        <ul>
+          <li>Built a reproducible benchmarking pipeline comparing 6 ML algorithms under k-fold cross-validation; Random Forest achieved 95% accuracy, with statistical analysis identifying the most predictive features.</li>
+        </ul>
+      </article>
+    </section>
+    <section class="resume-section">
+      <h2>Leadership</h2>
+      <article class="job">
+        <h3>Founder / President, Technical Interview Association at Auburn University</h3>
+        <p class="meta">2023 – 2026</p>
+        <ul>
+          <li>Founded and grew the organization to 50+ active members with official ACM financial sponsorship; built a curriculum covering data structures, algorithms, and behavioral interviewing.</li>
+          <li>Ran approximately 20 mock technical interviews per semester; in 2025, 80% of active members reported internship or full-time offers at major technology and financial firms.</li>
+        </ul>
+      </article>
+    </section>
+    <section class="resume-section">
+      <h2>Skills</h2>
+      <dl class="skills-list">
+        <div class="skill-row">
+          <dt>Languages:</dt>
+          <dd>Python, C, C++, Java, SQL, Bash</dd>
+        </div>
+        <div class="skill-row">
+          <dt>ML / Computer Vision:</dt>
+          <dd>PyTorch, TensorFlow, OpenCV, YOLO, scikit-learn, pandas, NumPy</dd>
+        </div>
+        <div class="skill-row">
+          <dt>Simulation / Synthetic Data:</dt>
+          <dd>Unreal Engine 5, Learning Agents Plugin, custom environment authoring</dd>
+        </div>
+        <div class="skill-row">
+          <dt>Tools &amp; Infrastructure:</dt>
+          <dd>Git, Docker, AWS, Linux, CUDA, Ultralytics</dd>
+        </div>
+      </dl>
+    </section>
+  </article>
+</body>
+</html>
