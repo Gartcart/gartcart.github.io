@@ -10,7 +10,8 @@
   --fill-hover: rgba(28, 30, 36, 0.82);
 
   /* Typography */
-  --font-comic: "Comic Sans MS", "Comic Sans", cursive;
+  --font-name: "Papyrus", fantasy;
+  --font-base: "Times New Roman", Times, serif;
 
   /* Animation */
   --ease-fast: 0.18s ease;
@@ -44,13 +45,13 @@ canvas {
 
 .name {
   top: 33.333%;
-  font: 500 clamp(2.5rem, 9vw, 7rem) / 1 var(--font-comic);
+  font: 500 clamp(2.5rem, 9vw, 7rem) / 1 var(--font-name);
   letter-spacing: -0.03em;
 }
 
 .role {
   top: 66.667%;
-  font: 400 clamp(0.75rem, 1.6vw, 1rem) / 1 var(--font-comic);
+  font: 400 clamp(0.75rem, 1.6vw, 1rem) / 1 var(--font-base);
   letter-spacing: 0.42em;
   text-transform: uppercase;
   text-indent: 0.42em;
@@ -72,7 +73,7 @@ nav a {
   width: 10rem;
   height: 3rem;
   color: var(--text-muted);
-  font: 400 11px / 1 var(--font-comic);
+  font: 400 11px / 1 var(--font-base);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   text-indent: 0.18em;
