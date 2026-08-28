@@ -6,6 +6,9 @@
 export default class Seismograph {
   #canvas;
   #ctx;
+  #resizeObserver;
+  #pointerMoveHandler;
+  #animationFrameId;
   #channels = [];
   #state = {
     width: 0,
