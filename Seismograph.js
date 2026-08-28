@@ -31,7 +31,7 @@ export default class Seismograph {
     pxPerSample: 2,
     gridPx: 40,
     markEvery: 5,
-    fullScale: 4000,
+    fullScale: 2500,
     speedLimit: 8000,
     rowFill: 0.4,
     maxDpr: 2,
@@ -69,9 +69,9 @@ export default class Seismograph {
 
   #initChannels() {
     const definitions = [
-      { hz: 5.0, damp: 0.09, ink: "#f4f4f0", weight: 1.4, drive: m => m.speed },
-      { hz: 3.4, damp: 0.07, ink: "#b6bac4", weight: 1.0, drive: m => m.vx },
-      { hz: 3.4, damp: 0.07, ink: "#b6bac4", weight: 1.0, drive: m => m.vy }
+      { hz: 5.0, damp: 0.09, ink: "#8d8d88", weight: 1.4, drive: m => m.speed },
+      { hz: 3.4, damp: 0.07, ink: "#63666e", weight: 1.0, drive: m => m.vx },
+      { hz: 3.4, damp: 0.07, ink: "#63666e", weight: 1.0, drive: m => m.vy }
     ];
     
     this.#channels = definitions.map(c => {
