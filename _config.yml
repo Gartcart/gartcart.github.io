@@ -1,0 +1,11 @@
+# Site settings
+title: "Garrett's Portfolio"
+description: "Finally, a place for all his cool stuff"
+url: "https://gartcart.github.io"
+baseurl: "gartcart.github.io"
+
+# Build stuff
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
