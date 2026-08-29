@@ -20,14 +20,17 @@ function formatLabel(value) {
  * @param {object}   [cfg]
  * @param {number}   [cfg.height=15]  Row count.
  * @param {number}   [cfg.offset=3]   Columns reserved for the axis.
+ * @param {number}   [cfg.min]        Force the axis floor (default: series min).
+ * @param {number}   [cfg.max]        Force the axis ceiling (default: series max).
  * @returns {string}
  */
 export function plot(series, cfg = {}) {
   if (!series.length) return "";
 
   const offset = cfg.offset ?? 3;
-  const min = Math.min(...series);
-  const max = Math.max(...series);
+  // Overridable so a flat, all-zero series still gets a readable axis.
+  const min = Math.min(cfg.min ?? Infinity, ...series);
+  const max = Math.max(cfg.max ?? -Infinity, ...series);
   const interval = max - min;
   const height = cfg.height ?? (interval || 1);
   const ratio = interval === 0 ? 1 : height / interval;
@@ -64,14 +67,11 @@ export function plot(series, cfg = {}) {
   return grid.map((row) => row.join("").replace(/\s+$/, "")).join("\n");
 }
 
-/** Python's strftime("%c") in UTC, e.g. "Fri Aug 28 07:07:17 2026". */
 export function formatCTime(date) {
-  // FIX: Removed accidental spaces inside the strings
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-  // FIX: Changed `(n) = >` to `(n) =>` and removed spaces in "0"
   const p = (n) => String(n).padStart(2, "0");
 
   return `${days[date.getUTCDay()]} ${months[date.getUTCMonth()]}` +
