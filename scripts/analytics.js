@@ -88,9 +88,6 @@ async function render() {
         if (token !== renderToken) return;
         output.textContent =
         "        Could not load traffic data.\n\n" +
-        `        ${error.message}\n\n` +
-        `        The Repository Traffic workflow writes ${CONFIG.csvUrl}.\n` +
-        "        Run it once from the Actions tab, then reload.";
         setStatus("Traffic data unavailable.");
     }
 }
