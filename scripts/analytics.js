@@ -87,7 +87,7 @@ async function render() {
     } catch (error) {
         if (token !== renderToken) return;
         output.textContent =
-        "        Could not load traffic data.\n\n" +
+        "        Could not load traffic data.\n\n";
         setStatus("Please reload.");
     }
 }
