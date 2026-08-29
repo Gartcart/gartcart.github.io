@@ -3,4 +3,4 @@ My Website!
 
 
 
-(Heavily under construction so please don't judge me)
+(Projects coming soon)
