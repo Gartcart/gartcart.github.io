@@ -39,7 +39,6 @@ function buildFile(rows, { label, height, floorMax }) {
         "",
         "",
         "",
-        "",
         "        Repository Views",
         "",
         plot(values, { height: Math.min(height, top), min: 0, max: top }),
