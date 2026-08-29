@@ -1,3 +1,4 @@
+// AI tools were used to write this workflow!
 name: Repository Traffic
 
 on:
@@ -18,13 +19,22 @@ jobs:
 
     steps:
       - name: Check out the site
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Fetch view counts
         env:
           GH_TOKEN: ${{ secrets.TRAFFIC_TOKEN || secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
-        run: gh api "repos/$REPO/traffic/views?per=day" > /tmp/views.json
+        run: |
+          if ! gh api "repos/$REPO/traffic/views?per=day" > /tmp/views.json 2>/tmp/err.txt; then
+            echo "::error::Traffic API call failed:"
+            cat /tmp/err.txt
+            if grep -q "403" /tmp/err.txt; then
+              echo "::error::403 Please check token access"
+            fi
+            exit 1
+          fi
+          echo "Fetched $(python3 -c 'import json;print(len(json.load(open("/tmp/views.json"))["views"]))') day(s)."
 
       - name: Merge into traffic/views.csv
         run: python3 .github/scripts/merge_traffic.py /tmp/views.json traffic/views.csv
