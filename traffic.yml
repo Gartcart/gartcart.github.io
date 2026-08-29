@@ -1,0 +1,42 @@
+name: Repository Traffic
+
+on:
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repository-traffic
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the site
+        uses: actions/checkout@v4
+
+      - name: Fetch view counts
+        env:
+          GH_TOKEN: ${{ secrets.TRAFFIC_TOKEN || secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: gh api "repos/$REPO/traffic/views?per=day" > /tmp/views.json
+
+      - name: Merge into traffic/views.csv
+        run: python3 .github/scripts/merge_traffic.py /tmp/views.json traffic/views.csv
+
+      - name: Commit if anything changed
+        run: |
+          if git diff --quiet -- traffic/views.csv; then
+            echo "No new traffic data; nothing to commit."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add traffic/views.csv
+          git commit -m "chore: update traffic data"
+          git push

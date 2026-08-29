@@ -1,0 +1,100 @@
+canvas#drum { opacity: 0.15; }
+
+.terminal-view {
+  --tv-border: var(--border, #2a2c33);
+  --tv-text: var(--text, #e6e6e3);
+  --tv-text-muted: var(--text-muted, #8b8f99);
+  --tv-prompt: #4ade80;
+
+  container-type: inline-size;
+  position: relative;
+  z-index: var(--z-content);
+  max-width: 900px;
+  margin: clamp(6rem, 12vh, 10rem) auto 4rem;
+  padding: 0 clamp(1rem, 5vw, 3rem);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.terminal-header {
+  display: flex;
+  gap: 0.5ch;
+  background: rgba(25, 26, 30, 0.8);
+  border: 1px solid var(--tv-border);
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.85rem;
+  color: var(--tv-text-muted);
+  backdrop-filter: blur(8px);
+}
+
+.terminal-header .prompt { color: var(--tv-prompt); }
+.terminal-header .command { color: var(--tv-text); }
+.terminal-header .command::after {
+  content: "";
+  display: inline-block;
+  width: 0.6ch;
+  height: 1em;
+  margin-left: 0.4ch;
+  background: var(--tv-prompt);
+  vertical-align: text-bottom;
+  animation: tv-blink 1.1s steps(1) infinite;
+}
+
+@keyframes tv-blink { 50% { opacity: 0; } }
+
+.traffic-file {
+  background: rgba(15, 16, 20, 0.9);
+  border: 1px solid var(--tv-border);
+  border-radius: 0 0 6px 6px;
+  padding: 2rem 1.25rem;
+  margin: 0;
+  color: var(--tv-text);
+  line-height: 1.4;
+  white-space: pre;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  font-size: clamp(9px, 1.72cqw, 14px);
+  tab-size: 4;
+}
+
+@supports not (font-size: 1cqw) {
+  .traffic-file { font-size: clamp(9px, 1.4vw, 14px); }
+}
+
+.traffic-file:focus-visible {
+  outline: 2px solid var(--tv-prompt);
+  outline-offset: -2px;
+}
+
+.traffic-file .highlight {
+  color: #f4f4f0;
+  font-weight: bold;
+}
+
+.traffic-summary {
+  margin: 0.75rem 0 0;
+  font-size: 0.8rem;
+  color: var(--tv-text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terminal-header .command::after { animation: none; }
+}
+
+@media print {
+  .terminal-view { padding: 0; max-width: none; }
+  .terminal-header { display: none; }
+  .traffic-file {
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+    box-shadow: none;
+    backdrop-filter: none;
+    font-size: 9px;
+    overflow: visible;
+  }
+  nav, canvas#drum { display: none; }
+}

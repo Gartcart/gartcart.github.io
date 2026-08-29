@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Garrett Scott — Traffic</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/analytics.css">
+  <script type="module" src="scripts/nav.js"></script>
+  <script type="module" src="scripts/analytics.js"></script>
+</head>
+<body>
+
+  <canvas id="drum" aria-hidden="true"></canvas>
+
+  <nav aria-label="Main navigation">
+    <a href="./" data-frame="sine"><span>Home</span></a>
+    <a href="resume.html" data-frame="zigzag"><span>Resume</span></a>
+    <a href="analytics.html" data-frame="scallop" aria-current="page"><span>Analytics</span></a>
+  </nav>
+
+  <main class="terminal-view">
+    <div class="terminal-header">
+      <span class="prompt">guest@portfolio:~$</span>
+      <span class="command">cat .traffic/views_chart.txt</span>
+    </div>
+    <pre id="traffic-output" class="traffic-file" aria-hidden="true">        Loading traffic data…</pre>
+    <p id="traffic-status" class="traffic-summary" role="status">Loading traffic data…</p>
+  </main>
+
+</body>
+</html>

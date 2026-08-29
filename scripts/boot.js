@@ -54,7 +54,7 @@ class TerminalBoot {
         if (this.elements.skipBtn) {
             this.elements.skipBtn.addEventListener("click", () => this.reveal(), { signal });
         } else {
-            console.warn("TerminalBoot: Skip button not found. Ensure HTML has <button id='skip-btn'>");
+            console.warn("TerminalBoot: skip button not found. Ensure HTML has <button id='skip-btn'>");
         }
 
         window.addEventListener("keydown", (e) => {
@@ -140,13 +140,11 @@ class TerminalBoot {
 
         this.state.isFinished = true;
         this.state.abortController.abort();
-
         this.elements.body.classList.add("is-rendered");
 
         try {
             sessionStorage.setItem(this.config.storageKey, "1");
         } catch (e) {
-            // Ignore storage errors
         }
     }
 
@@ -155,4 +153,9 @@ class TerminalBoot {
     }
 }
 
-new TerminalBoot();
+try {
+    new TerminalBoot();
+} catch (err) {
+    console.error("TerminalBoot failed:", err);
+    document.body.classList.add("is-rendered");
+}

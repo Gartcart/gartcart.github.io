@@ -1,19 +1,8 @@
 /* AI tools were used to generate this file */
-/* Resume page only. Loaded after styles.css so it can override the layout. */
-
-html, body {
-    overflow: auto;
-}
-
-body {
-    min-height: 100%;
-}
-
-/* ---- terminal ---- */
-
 .terminal {
     position: fixed;
     inset: 0;
+    z-index: var(--z-bg);
     overflow: hidden;
     padding: clamp(5.5rem, 12vh, 8rem) clamp(1rem, 6vw, 4rem) 3rem;
     font: 400 clamp(11px, 1.5vw, 13px) / 1.85 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -46,55 +35,23 @@ body {
     50% { opacity: 0; }
 }
 
-.skip-btn {
-    position: fixed;
-    right: clamp(1rem, 6vw, 4rem);
-    bottom: 2rem;
-    padding: 0.55rem 1.1rem;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: #6a6e78;
-    font: 400 10px / 1 ui-monospace, SFMono-Regular, Menlo, monospace;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    text-indent: 0.18em;
-    cursor: pointer;
-    transition: color var(--ease-fast), border-color var(--ease-fast), opacity 0.4s ease;
-}
-
-.skip-btn:hover {
-    color: var(--text);
-    border-color: var(--border-hover);
-}
-
 /* ---- the document ---- */
 
 .resume-sheet {
     position: relative;
+    z-index: var(--z-content);
     width: min(8.5in, 100%);
     margin: clamp(5.5rem, 12vh, 8rem) auto 4rem;
-    padding: 1in;
+    padding: clamp(1.25rem, 5vw, 1in);
     background: #fff;
     color: #000;
     font: 400 11pt / 1.4 var(--font-base);
     box-shadow: 0 2px 40px rgba(0, 0, 0, 0.6);
     opacity: 0;
+    pointer-events: none;
     transform: translateY(12px);
     transition: opacity 0.7s ease, transform 0.7s ease;
 }
-
-.is-rendered .terminal,
-.is-rendered .skip-btn {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.is-rendered .resume-sheet {
-    opacity: 1;
-    transform: none;
-}
-
-/* ---- header ---- */
 
 .resume-header {
     text-align: center;
@@ -129,8 +86,6 @@ body {
     font-style: italic;
     color: #444;
 }
-
-/* ---- sections ---- */
 
 .resume-section {
     margin-bottom: 12pt;
@@ -192,8 +147,6 @@ body {
     margin-bottom: 3pt;
 }
 
-/* ---- skills ---- */
-
 .skills-list {
     margin: 0;
 }
@@ -212,12 +165,11 @@ body {
     font-weight: 700;
 }
 
-/* ---- Skip Button ---- */
 .skip-btn {
     position: fixed;
     right: clamp(1rem, 6vw, 4rem);
     bottom: 2rem;
-    z-index: 10; /* CRITICAL: Ensures the button is clickable above the terminal */
+    z-index: var(--z-chrome);
     padding: 0.55rem 1.1rem;
     border: 1px solid var(--border);
     background: transparent;
@@ -237,7 +189,6 @@ body {
     outline: none;
 }
 
-/* ---- State Transitions ---- */
 body.is-rendered .terminal,
 body.is-rendered .skip-btn {
     opacity: 0;
@@ -246,10 +197,9 @@ body.is-rendered .skip-btn {
 
 body.is-rendered .resume-sheet {
     opacity: 1;
+    pointer-events: auto;
     transform: none;
 }
-
-/* ---- print ---- */
 
 @media print {
     .terminal,
@@ -264,6 +214,7 @@ body.is-rendered .resume-sheet {
         padding: 0;
         box-shadow: none;
         opacity: 1;
+        pointer-events: auto;
         transform: none;
     }
 }
