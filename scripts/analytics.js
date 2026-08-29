@@ -32,18 +32,18 @@ function buildFile(rows, { label, height, floorMax }) {
     const values = rows.map((r) => r.value);
     const from = rows[0].date;
     const to = rows[rows.length - 1].date;
-    const stamp = formatCTime(new Date(`${to}T23:55:00Z`));
     const top = Math.max(floorMax, ...values);
     return [
         "",
         `        Total ${label} per Day from ${from} to ${to}`,
         "",
+        "",
+        "",
+        "",
         "        Repository Views",
         "",
         plot(values, { height: Math.min(height, top), min: 0, max: top }),
         "",
-        "",
-        `        Data collected through - ${stamp} UTC`,
         "        ",
     ].join("\n");
 }
