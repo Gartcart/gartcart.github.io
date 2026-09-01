@@ -2,7 +2,7 @@
 import argparse
 import csv
 import sys
-from datetime import date, datetime, timezone
+from datetime import datetime
 from pathlib import Path
 
 START = "<!-- TRAFFIC:START -->"
@@ -75,15 +75,13 @@ def build_block(rows, window: int) -> str:
     lifetime = sum(r[1] for r in rows)
     peak_day, peak_views, _ = max(recent, key=lambda r: r[1])
     top = max(5, *views) if len(views) > 1 else max(5, views[0])
-    stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    stamp = rows[-1][0].isoformat()
 
     chart = plot(views, height=min(15, top), floor_min=0, floor_max=top)
 
     return "\n".join(
         [
             START,
-            "",
-            f"### Repository traffic &mdash; last {len(recent)} days",
             "",
             "| Views | Unique visitors | Busiest day | Lifetime views |",
             "| ----: | --------------: | :---------- | -------------: |",
