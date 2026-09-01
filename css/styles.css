@@ -1,5 +1,4 @@
 :root {
-  /* Palette */
   --bg: #000;
   --text: #f4f4f0;
   --text-muted: #b6bac4;
@@ -35,10 +34,6 @@ body {
   background: var(--bg);
 }
 
-body.home {
-  overflow: hidden;
-}
-
 canvas {
   position: fixed;
   inset: 0;
@@ -47,8 +42,14 @@ canvas {
   height: 100%;
 }
 
+.hero {
+  position: relative;
+  min-height: 100svh;
+  z-index: var(--z-content);
+}
+
 .label {
-  position: fixed;
+  position: absolute;
   inset-inline: 0;
   transform: translateY(-50%);
   margin: 0;
@@ -76,8 +77,10 @@ nav {
   top: clamp(1rem, 4vh, 2.5rem);
   inset-inline: 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: clamp(1.5rem, 7vw, 5.5rem);
+  row-gap: 0.5rem;
   z-index: var(--z-nav);
 }
 
