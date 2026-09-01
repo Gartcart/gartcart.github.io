@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Garrett S.</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/tiles.css">
   <script type="module" src="scripts/nav.js"></script>
+  <script type="module" src="scripts/tiles.js"></script>
 </head>
 <body>
   <canvas id="drum" aria-hidden="true"></canvas>
@@ -16,21 +18,28 @@
     <a href="analytics.html" data-frame="scallop"><span>Analytics</span></a>
   </nav>
 
-    <script type="module">
+  <script type="module">
     // Background stuff
     import Seismograph from './scripts/Seismograph.js';
     const seismo = new Seismograph("drum");
   </script>
 
+  <header class="hero">
+    <h1 class="label name">Garrett Scott</h1>
+    <p class="label role">Software Engineer</p>
+    <a class="hero-cue" href="#projects">Projects</a>
+  </header>
 
-  <h1 class="label name">Garrett Scott</h1>
-  <p class="label role">Software Engineer</p>
+  <section class="projects" id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="tiles" data-tiles></div>
+  </section>
 
-  <p class="label" style="top:auto;bottom:1.5rem;transform:none;font:400 clamp(0.6rem,1.2vw,0.75rem)/1.6 var(--font-base);color:var(--text-muted)">
-  Special thank you to
-  <a href="https://github.com/thavlik" style="color:inherit">Thomas Havlik</a> and
-  <a href="https://github.com/wumphlett" style="color:inherit">Will Humphlett</a>
-  for inspiration for this page.
-</p>
+  <footer class="site-footer">
+    Special thank you to
+    <a href="https://github.com/thavlik">Thomas Havlik</a> and
+    <a href="https://github.com/wumphlett">Will Humphlett</a>
+    for inspiration for this page.
+  </footer>
 </body>
 </html>
