@@ -44,8 +44,8 @@ export const projects = [
     tagline: "Blind date matchmaking for 195 people, solved as a graph problem",
     image: { src: "images/knock.gif", alt: "Animation of the matching graph resolving into paired nodes", fit: "contain" },
     body: [
-      "Survey responses from 195 students are converted into vectors and then matched according to how likely they are to fall in love!",
-      "Everyone is then a converted into a node and those nodes are matched with edges to confirm compatibility.",
+      "Survey responses from 195 Auburn students, gathered through fliers, Instagram ads, and word of mouth, become preference vectors across seven dimensions: emotion handling, conflict resolution, extraversion, lifestyle, communication, partner interaction, and humor. Hard dealbreakers on age, schedule, sexuality, height, tattoos, drinking, and religion cut the candidate pool first, and cosine similarity scores whatever survives.",
+      "Everyone is then a node, every viable pair an edge weighted by compatibility, and NetworkX's maximum weight matching selects the final set. That choice has a real cost: maximum weight matching optimizes total compatibility across the pool, so some people end up unmatched rather than paired badly. For a first run it was the right trade, and it is the main thing a second version would need to solve.",
       "Built with Trey Hibbard."
     ],
     tags: ["python", "networkx", "pandas", "numpy", "matplotlib"]
