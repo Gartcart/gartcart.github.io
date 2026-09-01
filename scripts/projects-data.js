@@ -29,7 +29,7 @@ export const projects = [
       'Track geometries were built in Unreal Engine 5 using the Learning Agents plugin, allowing policies to train and validate against synthetic data at scale. An automated evaluation harness quantifies results using Firth-penalized logistic regression, Fisher exact tests, and Wilson confidence intervals.',
       'Complete methodology and results will be provided upon request after the publication embargo expires.'
     ],
-    tags: ['python', 'pytorch', 'unreal engine', 'reinforcement learning']
+    tags: ['python', 'pytorch', 'unreal engine', 'reinforcement learning', 'imitation learning', 'C++']
   },
   {
     title: 'YOLO Look Once',
