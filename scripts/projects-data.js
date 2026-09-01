@@ -42,7 +42,7 @@ export const projects = [
   },
   {
     title: "Knock",
-    badge: { label: "private", color: "#8b9098" },
+    badge: { label: "open source", color: "#8b9098" },
     tagline: "Blind date matchmaking for 195 people, solved as a graph problem",
     image: { src: "attachments/Knock.gif", alt: "Animation of the matching graph resolving into paired nodes", fit: "contain" },
     body: [
@@ -50,7 +50,7 @@ export const projects = [
       "Everyone is then a node, every viable pair an edge weighted by compatibility, and NetworkX's maximum weight matching selects the final set. That choice has a real cost: maximum weight matching optimizes total compatibility across the pool, so some people end up unmatched rather than paired badly. For a first run it was the right trade, and it is the main thing a second version would need to solve.",
       "Built with Trey Hibbard."
     ],
-    tags: ["python", "networkx", "pandas", "numpy", "matplotlib"]
+    tags: ["python", "networkx", "pandas", "numpy", "matplotlib"],
     links: [{ label: 'GitHub', href: 'https://github.com/Gartcart/knock-public' }]
   },
   {
