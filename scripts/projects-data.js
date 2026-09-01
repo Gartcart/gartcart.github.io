@@ -1,4 +1,4 @@
-// AI tools were used to generate this comment block.
+// AI tools were used to generate this comment block, and Knock's project description.
 // Append an object to this array to generate a new tile. The layout grid adapts automatically.
 //
 // Only the `title` property is mandatory. Omitting any other field simply hides its corresponding row.
