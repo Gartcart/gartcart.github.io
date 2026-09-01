@@ -23,30 +23,55 @@ jobs:
 
       - name: Fetch view counts
         env:
-          GH_TOKEN: ${{ secrets.TRAFFIC_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
           REPO: ${{ github.repository }}
         run: |
-          if ! gh api "repos/$REPO/traffic/views?per=day" > /tmp/views.json 2>/tmp/err.txt; then
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::error::TRAFFIC_TOKEN is not set."
+            echo "::error::Add a personal access token with 'repo' scope (classic)"
+            echo "::error::or 'Administration: Read-only' (fine-grained) as the"
+            echo "::error::TRAFFIC_TOKEN repository secret. The built-in"
+            echo "::error::GITHUB_TOKEN cannot read traffic data."
+            exit 1
+          fi
+
+          if ! gh api -H "Accept: application/vnd.github+json" \
+              "repos/$REPO/traffic/views?per=day" \
+              > /tmp/views.json 2>/tmp/err.txt; then
             echo "::error::Traffic API call failed:"
             cat /tmp/err.txt
             if grep -q "403" /tmp/err.txt; then
-              echo "::error::403 Please check token access"
+              echo "::error::403 - TRAFFIC_TOKEN cannot read traffic for $REPO."
+              echo "::error::It must belong to an account with push access and"
+              echo "::error::carry 'repo' scope or 'Administration: Read-only'."
+            fi
+            if grep -q "404" /tmp/err.txt; then
+              echo "::error::404 - check that TRAFFIC_TOKEN has not expired."
             fi
             exit 1
           fi
-          echo "Fetched $(python3 -c 'import json;print(len(json.load(open("/tmp/views.json"))["views"]))') day(s)."
+
+          if ! python3 -c "import json,sys;d=json.load(open('/tmp/views.json'));v=d['views'];print('API window: %d day(s), %d views, %d unique visitors.'%(len(v),d.get('count',0),d.get('uniques',0)));sys.stdout.write('::warning::GitHub reported no traffic in the last 14 days.\n') if not v else None"; then
+            echo "::error::Unexpected response from the traffic API:"
+            head -c 500 /tmp/views.json
+            exit 1
+          fi
 
       - name: Merge into traffic/views.csv
         run: python3 .github/scripts/merge_traffic.py /tmp/views.json traffic/views.csv
+
+      - name: Render the README traffic section
+        run: python3 .github/scripts/render_readme.py traffic/views.csv README.md --days 30
 
       - name: Commit if anything changed
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add traffic/views.csv
-          if git diff --cached --quiet -- traffic/views.csv; then
+          git add traffic/views.csv README.md
+          if git diff --cached --quiet; then
             echo "No new traffic data; nothing to commit."
             exit 0
           fi
           git commit -m "chore: update traffic data"
+          git pull --rebase --autostash
           git push

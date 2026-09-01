@@ -20,7 +20,7 @@ Total views per day, 2026-08-16 to 2026-08-31
        0 ┤ ╰╯ ╰──────────
 ```
 
-<sub>Collected daily from the GitHub traffic API &middot; updated 2026-09-01 22:01 UTC. An interactive version lives on the [Analytics page](https://gartcart.github.io/analytics.html).</sub>
+<sub>Collected daily from the GitHub traffic API &middot; updated 2026-09-01 23:33 UTC.</sub>
 
 <!-- TRAFFIC:END -->
 
