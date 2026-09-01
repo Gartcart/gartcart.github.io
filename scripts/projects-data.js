@@ -37,7 +37,8 @@ export const projects = [
     image: { src: "attachments/yolo.jpg", alt: "Adapted from Blog.paperspace.com", fit: "contain" },
     body: [
       'A YOLO-based computer vision pipeline that processes over 500 hours of streaming traffic camera footage, detecting: seatbelt usage, phone usage, speed, and distracted driving patterns',
-      'Repository unavailable'
+      'Repository unavailable',
+      'Photo adapted from: https://blog.paperspace.com/how-to-implement-a-yolo-object-detector-in-pytorch/'
     ],
     tags: ['python', 'pytorch', 'opencv', 'yolo', 'docker', 'cuda']
   },
