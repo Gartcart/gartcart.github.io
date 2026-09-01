@@ -73,7 +73,7 @@ canvas {
 }
 
 nav {
-  position: absolute;
+  position: fixed;
   top: clamp(1rem, 4vh, 2.5rem);
   inset-inline: 0;
   display: flex;
@@ -82,6 +82,14 @@ nav {
   gap: clamp(1.5rem, 7vw, 5.5rem);
   row-gap: 0.5rem;
   z-index: var(--z-nav);
+  transition: opacity var(--ease-fast), transform var(--ease-fast), visibility var(--ease-fast);
+}
+
+nav.nav-hidden {
+  opacity: 0;
+  transform: translateY(-0.6rem);
+  visibility: hidden;
+  pointer-events: none;
 }
 
 nav a {

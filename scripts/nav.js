@@ -25,3 +25,29 @@ for (const tile of document.querySelectorAll("nav a[data-frame]")) {
   svg.append(path);
   tile.prepend(svg);
 }
+
+// Hide the nav when the page's main content scrolls up into it,
+// and bring it back when the user returns toward the top.
+const nav = document.querySelector("nav");
+const content = document.querySelector(".proj-wrap, .resume-sheet, .terminal-view");
+
+if (nav && content) {
+  let ticking = false;
+
+  const update = () => {
+    ticking = false;
+    const navBottom = nav.getBoundingClientRect().bottom + 24;
+    nav.classList.toggle("nav-hidden", content.getBoundingClientRect().top < navBottom);
+  };
+
+  const onScroll = () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  };
+
+  addEventListener("scroll", onScroll, { passive: true });
+  addEventListener("resize", onScroll, { passive: true });
+  update();
+}
