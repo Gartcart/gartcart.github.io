@@ -72,7 +72,7 @@ nav a:hover .frame path {
 .grid-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 26rem), 1fr));
-  align-items: start;
+  grid-auto-rows: 1fr;
   gap: clamp(1rem, 2.2vw, 1.75rem);
 }
 
@@ -94,6 +94,7 @@ nav a:hover .frame path {
 .card {
   display: flex;
   flex-direction: column;
+  height: 100%;
   border: 1px solid var(--c-border-card);
   border-radius: 4px;
   background: var(--c-bg-card);
@@ -161,6 +162,7 @@ nav a:hover .frame path {
 .card-content {
   display: flex;
   flex-direction: column;
+  flex: 1;
   padding: 1.15rem;
 }
 
@@ -186,8 +188,8 @@ nav a:hover .frame path {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
-  margin: 0.35rem 0 0;
-  padding: 0;
+  margin: auto 0 0;
+  padding: 0.35rem 0 0;
   list-style: none;
 }
 
