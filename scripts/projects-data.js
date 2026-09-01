@@ -34,7 +34,7 @@ export const projects = [
   {
     title: 'YOLO Look Once',
     tagline: 'Vehicle detection and seat belt classification on live interstate cameras',
-    image: { src: "attachments/yolo.png", alt: "", fit: "contain" },
+    image: { src: "attachments/yolo.png", alt: "https://blog.paperspace.com/how-to-implement-a-yolo-object-detector-in-pytorch/", fit: "contain" },
     body: [
       'A YOLO-based computer vision pipeline that processes over 500 hours of streaming traffic camera footage, detecting: seatbelt usage, phone usage, speed, and distracted driving patterns',
       'Repository unavailable'
