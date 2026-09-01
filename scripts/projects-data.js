@@ -22,6 +22,7 @@ export const projects = [
   {
     title: 'Residual Driving Agent',
     tagline: 'Hybrid imitation and reinforcement learning for autonomous control',
+    image: { src: "attachments/Car.png", alt: "", fit: "contain" },
     badge: { label: 'embargoed', color: '#c99a3f' },
     body: [
       'An end-to-end perception and control pipeline combining behavioral cloning with a residual reinforcement learning agent, trained on human demonstration laps. The cloned policy manages standard driving scenarios while the residual agent focuses solely on corrective actions.',
