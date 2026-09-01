@@ -40,11 +40,12 @@ export const projects = [
       'Repository unavailable',
       'Photo adapted from: https://blog.paperspace.com/how-to-implement-a-yolo-object-detector-in-pytorch/'
     ],
-    tags: ['python', 'pytorch', 'opencv', 'yolo', 'docker', 'cuda']
+    tags: ['python', 'pytorch', 'opencv', 'yolo', 'docker', 'cuda'],
+    badge: { label: 'private', color: "#8b9098" }
   },
   {
     title: "Knock",
-    badge: { label: "open source", color: "#8b9098" },
+    badge: 'open source',
     tagline: "Blind date matchmaking for 195 people, solved as a graph problem",
     image: { src: "attachments/Knock.gif", alt: "Animation of the matching graph resolving into paired nodes", fit: "contain" },
     body: [
