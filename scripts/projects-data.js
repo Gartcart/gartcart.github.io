@@ -51,6 +51,7 @@ export const projects = [
       "Built with Trey Hibbard."
     ],
     tags: ["python", "networkx", "pandas", "numpy", "matplotlib"]
+    links: [{ label: 'GitHub', href: 'https://github.com/Gartcart/knock-public' }]
   },
   {
     title: 'Wine Quality',
