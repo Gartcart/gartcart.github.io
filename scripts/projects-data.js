@@ -43,7 +43,7 @@ export const projects = [
     title: "Knock",
     badge: { label: "private", color: "#8b9098" },
     tagline: "Blind date matchmaking for 195 people, solved as a graph problem",
-    image: { src: "images/knock.gif", alt: "Animation of the matching graph resolving into paired nodes", fit: "contain" },
+    image: { src: "attachments/Knock.gif", alt: "Animation of the matching graph resolving into paired nodes", fit: "contain" },
     body: [
       "Survey responses from 195 Auburn students, gathered through fliers, Instagram ads, and word of mouth, become preference vectors across seven dimensions: emotion handling, conflict resolution, extraversion, lifestyle, communication, partner interaction, and humor. Hard dealbreakers on age, schedule, sexuality, height, tattoos, drinking, and religion cut the candidate pool first, and cosine similarity scores whatever survives.",
       "Everyone is then a node, every viable pair an edge weighted by compatibility, and NetworkX's maximum weight matching selects the final set. That choice has a real cost: maximum weight matching optimizes total compatibility across the pool, so some people end up unmatched rather than paired badly. For a first run it was the right trade, and it is the main thing a second version would need to solve.",
@@ -62,6 +62,7 @@ export const projects = [
   {
     title: 'This Website',
     tagline: 'Cool Animations',
+    image: { src: "attachments/Website.png", alt: "Website Photograph", fit: "contain" },
     badge: 'open source',
     body: 'The homepage background features a live seismograph rendered directly to canvas. Navigation frames use SVG paths generated from wave functions instead of manual drawing, and the resume types itself from a simulated terminal before settling into a standard page layout. A scheduled workflow collects traffic data and plots it for later viewing. Special thanks to Will Humphlett for the idea for the analytics.',
     tags: ['javascript', 'html', 'css', 'github actions'],
