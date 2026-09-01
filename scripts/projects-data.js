@@ -52,7 +52,7 @@ export const projects = [
       "Built with Trey Hibbard."
     ],
     tags: ["python", "networkx", "pandas", "numpy", "matplotlib"],
-    links: [{ label: 'GitHub', href: 'https://github.com/Gartcart/knock-public' }]
+    links: [{ label: 'Available on GitHub', href: 'https://github.com/Gartcart/knock-public' }]
   },
   {
     title: 'Wine Quality',
@@ -61,7 +61,7 @@ export const projects = [
     badge: 'open source',
     body: 'Six algorithms are compared under k-fold cross-validation within a single reproducible harness, with Random Forest achieving 95% accuracy. The analysis pinpointed specific chemicals which affect the quality of wine most.',
     tags: ['python', 'scikit-learn', 'pandas', 'numpy'],
-    links: [{ label: 'GitHub', href: 'https://github.com/Gartcart/Wine-Quality' }]
+    links: [{ label: 'Available on GitHub', href: 'https://github.com/Gartcart/Wine-Quality' }]
   },
   {
     title: 'This Website',
@@ -70,6 +70,6 @@ export const projects = [
     badge: 'open source',
     body: 'The homepage background features a live seismograph rendered directly to canvas. Navigation frames use SVG paths generated from wave functions instead of manual drawing, and the resume types itself from a simulated terminal before settling into a standard page layout. A scheduled workflow collects traffic data and plots it for later viewing. Special thanks to Will Humphlett for the idea for the analytics.',
     tags: ['javascript', 'html', 'css', 'github actions'],
-    links: [{ label: 'GitHub', href: 'https://github.com/Gartcart/gartcart.github.io' }]
+    links: [{ label: 'Available on GitHub', href: 'https://github.com/Gartcart/gartcart.github.io' }]
   }
 ];
