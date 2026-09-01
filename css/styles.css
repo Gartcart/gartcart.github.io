@@ -44,7 +44,7 @@ canvas {
 
 .hero {
   position: relative;
-  min-height: 100svh;
+  min-height: 88svh;
   z-index: var(--z-content);
 }
 

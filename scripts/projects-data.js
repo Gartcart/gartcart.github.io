@@ -50,7 +50,7 @@ export const projects = [
     image: { src: "attachments/Knock.gif", alt: "Animation of the matching graph resolving into paired nodes", fit: "contain" },
     body: [
       "Survey responses from 195 Auburn students, gathered through fliers, Instagram ads, and word of mouth, become preference vectors across seven dimensions: emotion handling, conflict resolution, extraversion, lifestyle, communication, partner interaction, and humor. Hard dealbreakers on age, schedule, sexuality, height, tattoos, drinking, and religion cut the candidate pool first, and cosine similarity scores whatever survives.",
-      "Everyone is then a node, every viable pair an edge weighted by compatibility, and NetworkX's maximum weight matching selects the final set. That choice has a real cost: maximum weight matching optimizes total compatibility across the pool, so some people end up unmatched rather than paired badly. For a first run it was the right trade, and it is the main thing a second version would need to solve.",
+      "Everyone is then made into a node, where every viable pair becomes an edge weighted by compatibility. NetworkX's maximum weight matching selects the final set. Maximum weight matching optimizes total compatibility across the pool, so some people end up unmatched rather than paired badly. We chose to prioritize a small pool of matches with high compatability instead of a large pool of couples with average compatability. Version number 2 would need to solve this limitation.",
       "Built with Trey Hibbard."
     ],
     tags: ["python", "networkx", "pandas", "numpy", "matplotlib"],
