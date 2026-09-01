@@ -26,18 +26,31 @@ for (const tile of document.querySelectorAll("nav a[data-frame]")) {
   tile.prepend(svg);
 }
 
-// Hide the nav when the page's main content scrolls up into it,
-// and bring it back when the user returns toward the top.
+// Hide the nav whenever page content — project cards, resume, analytics,
+// or the hero text and cue — would collide with it while scrolling.
 const nav = document.querySelector("nav");
-const content = document.querySelector(".proj-wrap, .resume-sheet, .terminal-view");
+const watched = document.querySelectorAll(
+  ".proj-wrap, .resume-sheet, .terminal-view, .hero .label, .scroll-cue"
+);
 
-if (nav && content) {
+if (nav && watched.length) {
   let ticking = false;
 
   const update = () => {
     ticking = false;
-    const navBottom = nav.getBoundingClientRect().bottom + 24;
-    nav.classList.toggle("nav-hidden", content.getBoundingClientRect().top < navBottom);
+    const navRect = nav.getBoundingClientRect();
+    const navTop = navRect.top - 24;
+    const navBottom = navRect.bottom + 24;
+
+    let overlaps = false;
+    for (const el of watched) {
+      const r = el.getBoundingClientRect();
+      if (r.top < navBottom && r.bottom > navTop) {
+        overlaps = true;
+        break;
+      }
+    }
+    nav.classList.toggle("nav-hidden", overlaps);
   };
 
   const onScroll = () => {
