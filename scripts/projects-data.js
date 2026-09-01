@@ -54,6 +54,7 @@ export const projects = [
   {
     title: 'Wine Quality',
     tagline: 'A rigorous benchmarking pipeline for classical ML',
+    image: { src: "attachments/Wine.png", alt: "", fit: "contain" },
     badge: 'open source',
     body: 'Six algorithms are compared under k-fold cross-validation within a single reproducible harness, with Random Forest achieving 95% accuracy. The analysis pinpointed specific chemicals which affect the quality of wine most.',
     tags: ['python', 'scikit-learn', 'pandas', 'numpy'],
