@@ -73,7 +73,7 @@ canvas {
 }
 
 nav {
-  position: fixed;
+  position: absolute;
   top: clamp(1rem, 4vh, 2.5rem);
   inset-inline: 0;
   display: flex;
