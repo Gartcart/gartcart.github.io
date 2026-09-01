@@ -39,6 +39,7 @@ export const projects = [
     ],
     tags: ['python', 'pytorch', 'opencv', 'yolo', 'docker', 'cuda']
   },
+  {
     title: "Knock",
     badge: { label: "private", color: "#8b9098" },
     tagline: "Blind date matchmaking for 195 people, solved as a graph problem",
