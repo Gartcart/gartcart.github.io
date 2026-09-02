@@ -3,22 +3,23 @@ My Website!
 
 <!-- TRAFFIC:START -->
 
-### Repository traffic &mdash; last 16 days
-
 | Views | Unique visitors | Busiest day | Lifetime views |
 | ----: | --------------: | :---------- | -------------: |
 | 8 | 6 | 2026-08-16 (3) | 8 |
 
 ```
-Total views per day, 2026-08-16 to 2026-08-31
+Total views per day, 2026-08-16 to 2026-09-01
 
        5 ┼
        4 ┤
        3 ┼─╮
        2 ┤ │
        1 ┤ │╭─╮
-       0 ┤ ╰╯ ╰──────────
+       0 ┤ ╰╯ ╰───────────
 ```
+
+<sub>Collected daily from the GitHub traffic API &middot; updated 2026-09-01.</sub>
+
 <!-- TRAFFIC:END -->
 
 AI DiSCLAIMER:
