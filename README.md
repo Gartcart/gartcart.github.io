@@ -8,17 +8,17 @@ My Website!
 | 8 | 6 | 2026-08-16 (3) | 8 |
 
 ```
-Total views per day, 2026-08-16 to 2026-09-02
+Total views per day, 2026-08-16 to 2026-09-03
 
        5 ┼
        4 ┤
        3 ┼─╮
        2 ┤ │
        1 ┤ │╭─╮
-       0 ┤ ╰╯ ╰────────────
+       0 ┤ ╰╯ ╰─────────────
 ```
 
-<sub>Collected daily from the GitHub traffic API &middot; updated 2026-09-02.</sub>
+<sub>Collected daily from the GitHub traffic API &middot; updated 2026-09-03.</sub>
 
 <!-- TRAFFIC:END -->
 
