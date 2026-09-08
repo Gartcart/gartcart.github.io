@@ -1,5 +1,5 @@
 # gartcart.github.io
-My Website!
+My Website! Please note that I merged every change directly to keep a long record rather than rebasing.
 
 <!-- TRAFFIC:START -->
 
