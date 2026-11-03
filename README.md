@@ -5,10 +5,10 @@ My Website! Please note that I merged every change directly to keep a long recor
 
 | Views | Unique visitors | Busiest day | Lifetime views |
 | ----: | --------------: | :---------- | -------------: |
-| 0 | 0 | 2026-10-03 (0) | 8 |
+| 0 | 0 | 2026-10-04 (0) | 8 |
 
 ```
-Total views per day, 2026-10-03 to 2026-11-01
+Total views per day, 2026-10-04 to 2026-11-02
 
        5 ┼
        4 ┤
@@ -18,7 +18,7 @@ Total views per day, 2026-10-03 to 2026-11-01
        0 ┼─────────────────────────────
 ```
 
-<sub>Collected daily from the GitHub traffic API &middot; updated 2026-11-01.</sub>
+<sub>Collected daily from the GitHub traffic API &middot; updated 2026-11-02.</sub>
 
 <!-- TRAFFIC:END -->
 
